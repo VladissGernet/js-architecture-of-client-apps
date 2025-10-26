@@ -1,13 +1,13 @@
 {
   "private": true,
   "description": "Учебный демо-проект \"Менеджер задач\" от HTML Academy",
-  "browserlist": [
+  "browserslist": [
     "last 2 versions",
     "not dead",
     "not ie <= 11",
     "not op_mini all",
     "not < 0.25%"
-  ]
+  ],
   "scripts": {
     "lint": "eslint src/",
     "build": "webpack --mode production",
