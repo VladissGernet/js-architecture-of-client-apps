@@ -1,9 +1,12 @@
 parserOptions:
-  ecmaVersion: latest
-  sourceType: 'module'
+  ecmaVersion: 2023
+  sourceType: module
 
 env:
-  es2022: true
+  es2023: true
   browser: true
 
 extends: 'htmlacademy/vanilla'
+
+ignorePatterns:
+  - webpack.config.js
