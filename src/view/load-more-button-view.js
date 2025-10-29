@@ -1,4 +1,4 @@
-import {createElement} from '../render.js';
+import { createElement } from '../render.js';
 
 function createLoadMoreButtonTemplate() {
   return '<button class="load-more" type="button">load more</button>';

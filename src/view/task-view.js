@@ -1,8 +1,7 @@
-import {createElement} from '../render.js';
+import { createElement } from '../render.js';
 
 function createTaskTemplate() {
-  return (
-    `<article class="card card--black">
+  return `<article class="card card--black">
       <div class="card__form">
         <div class="card__inner">
           <div class="card__control">
@@ -43,8 +42,7 @@ function createTaskTemplate() {
           </div>
         </div>
       </div>
-    </article>`
-  );
+    </article>`;
 }
 
 export default class TaskView {

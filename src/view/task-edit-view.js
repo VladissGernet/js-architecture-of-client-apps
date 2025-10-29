@@ -1,8 +1,7 @@
-import {createElement} from '../render.js';
+import { createElement } from '../render.js';
 
 function createTaskEditTemplate() {
-  return (
-    `<article class="card card--edit card--yellow card--repeat">
+  return `<article class="card card--edit card--yellow card--repeat">
       <form class="card__form" method="get">
         <div class="card__inner">
           <div class="card__color-bar">
@@ -198,8 +197,7 @@ function createTaskEditTemplate() {
           </div>
         </div>
       </form>
-    </article>`
-  );
+    </article>`;
 }
 
 export default class TaskEditView {

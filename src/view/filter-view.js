@@ -1,8 +1,7 @@
-import {createElement} from '../render.js';
+import { createElement } from '../render.js';
 
 function createFilterTemplate() {
-  return (
-    `<section class="main__filter filter container">
+  return `<section class="main__filter filter container">
       <input
         type="radio"
         id="filter__all"
@@ -60,8 +59,7 @@ function createFilterTemplate() {
       <label for="filter__archive" class="filter__label"
         >Archive <span class="filter__archive-count">115</span></label
       >
-    </section>`
-  );
+    </section>`;
 }
 
 export default class FilterView {

@@ -1,9 +1,9 @@
-import NewTaskButtonView from "./view/new-task-button-view";
-import FilterView from "./view/filter-view";
-import { render } from "./render";
+import NewTaskButtonView from './view/new-task-button-view';
+import FilterView from './view/filter-view';
+import { render } from './render';
 
-const siteMainElement = document.querySelector(".main");
-const siteHeaderElement = siteMainElement.querySelector(".main__control");
+const siteMainElement = document.querySelector('.main');
+const siteHeaderElement = siteMainElement.querySelector('.main__control');
 
 render(new NewTaskButtonView(), siteHeaderElement);
 render(new FilterView(), siteMainElement);

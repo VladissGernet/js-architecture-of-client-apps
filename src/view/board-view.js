@@ -1,4 +1,4 @@
-import {createElement} from '../render.js';
+import { createElement } from '../render.js';
 
 function createBoardTemplate() {
   return '<section class="board container"></section>';
