@@ -1,6 +1,7 @@
 {
   "private": true,
   "description": "Учебный демо-проект \"Менеджер задач\" от HTML Academy",
+  "type": "module",
   "browserslist": [
     "last 2 versions",
     "not dead",
