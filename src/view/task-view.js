@@ -1,26 +1,41 @@
 import { createElement } from '../render.js';
-import { humanizeTaskDueDate, isTaskExpired } from '../utils.js';
+import {
+  humanizeTaskDueDate,
+  isTaskExpired,
+  isTaskRepeating,
+} from '../utils.js';
 
 function createTaskTemplate(task) {
-  const { color, description, dueDate } = task;
+  const { color, description, dueDate, repeating, isArchive, isFavorite } =
+    task;
 
   const date = humanizeTaskDueDate(dueDate);
 
   const deadlineClassName = isTaskExpired(dueDate) ? 'card--deadline' : '';
 
-  return `<article class="card card--${color} ${deadlineClassName}">
+  const repeatClassName = isTaskRepeating(repeating) ? 'card--repeat' : '';
+
+  const archiveClassName = isArchive
+    ? 'card__btn--archive card__btn--disabled'
+    : 'card__btn--archive';
+
+  const favoriteClassName = isFavorite
+    ? 'card__btn--favorites card__btn--disabled'
+    : 'card__btn--favorites';
+
+  return `<article class="card card--${color} ${deadlineClassName} ${repeatClassName}">
       <div class="card__form">
         <div class="card__inner">
           <div class="card__control">
             <button type="button" class="card__btn card__btn--edit">
               edit
             </button>
-            <button type="button" class="card__btn card__btn--archive">
+            <button type="button" class="card__btn ${archiveClassName}">
               archive
             </button>
             <button
               type="button"
-              class="card__btn card__btn--favorites"
+              class="card__btn ${favoriteClassName}"
             >
               favorites
             </button>
@@ -28,7 +43,7 @@ function createTaskTemplate(task) {
 
           <div class="card__color-bar">
             <svg class="card__color-bar-wave" width="100%" height="10">
-              <use href="#wave"></use>
+              <use xlink:href="#wave"></use>
             </svg>
           </div>
 
