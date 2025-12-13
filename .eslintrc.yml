@@ -9,5 +9,9 @@ env:
 
 extends: 'htmlacademy/vanilla'
 
+rules:
+  quotes: ['error', 'single', { avoidEscape: true }]
+  indent: ['error', 2, { ignoredNodes: ['TemplateLiteral *'] }]
+
 ignorePatterns:
   - webpack.config.js
