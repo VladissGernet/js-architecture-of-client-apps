@@ -4,7 +4,7 @@ import TaskListView from '../view/task-list-view.js';
 import TaskView from '../view/task-view.js';
 import TaskEditView from '../view/task-edit-view.js';
 import LoadMoreButtonView from '../view/load-more-button-view.js';
-import { render } from '../render.js';
+import { render } from '../framework/render.js';
 
 export default class BoardPresenter {
   boardComponent = new BoardView();
@@ -19,20 +19,20 @@ export default class BoardPresenter {
     this.boardTasks = [...this.tasksModel.getTasks()];
 
     render(this.boardComponent, this.boardContainer);
-    render(new SortView(), this.boardComponent.getElement());
-    render(this.taskListComponent, this.boardComponent.getElement());
+    render(new SortView(), this.boardComponent.element);
+    render(this.taskListComponent, this.boardComponent.element);
     render(
       new TaskEditView({ task: this.boardTasks[0] }),
-      this.taskListComponent.getElement()
+      this.taskListComponent.element
     );
 
     for (let i = 1; i < this.boardTasks.length; i++) {
       render(
         new TaskView({ task: this.boardTasks[i] }),
-        this.taskListComponent.getElement()
+        this.taskListComponent.element
       );
     }
 
-    render(new LoadMoreButtonView(), this.boardComponent.getElement());
+    render(new LoadMoreButtonView(), this.boardComponent.element);
   }
 }
