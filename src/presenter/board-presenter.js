@@ -27,6 +27,10 @@ export default class BoardPresenter {
   init() {
     this.#boardTasks = [...this.#tasksModel.tasks];
 
+    this.#renderBoard();
+  }
+
+  #renderBoard() {
     render(this.#boardComponent, this.#boardContainer);
     render(new SortView(), this.#boardComponent.element);
     render(this.#taskListComponent, this.#boardComponent.element);
