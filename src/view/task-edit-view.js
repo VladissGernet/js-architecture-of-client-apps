@@ -1,6 +1,6 @@
 import AbstractView from '../framework/view/abstract-view.js';
 import { COLORS } from '../const.js';
-import { humanizeTaskDueDate, isTaskRepeating } from '../utils.js';
+import { humanizeTaskDueDate, isTaskRepeating } from '../utils/task.js';
 
 // Используем String.raw как тег для шаблонных строк,
 // чтобы Prettier и редактор форматировали HTML внутри template literals корректно

@@ -4,7 +4,7 @@ import {
   humanizeTaskDueDate,
   isTaskExpired,
   isTaskRepeating,
-} from '../utils.js';
+} from '../utils/task.js';
 
 function createTaskTemplate(task) {
   const { color, description, dueDate, repeating, isArchive, isFavorite } =
