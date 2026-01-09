@@ -18,10 +18,6 @@ function isTaskExpiringToday(dueDate) {
   return dueDate && dayjs(dueDate).isSame(dayjs(), 'D');
 }
 
-function isDatesEqual(dateA, dateB) {
-  return (dateA === null && dateB === null) || dayjs(dateA).isSame(dateB, 'D');
-}
-
 // Функция помещает задачи без даты в конце списка,
 // возвращая нужный вес для колбэка sort
 function getWeightForNullDate(dateA, dateB) {
@@ -59,5 +55,4 @@ export {
   isTaskExpiringToday,
   sortTaskUp,
   sortTaskDown,
-  isDatesEqual,
 };
