@@ -45,7 +45,7 @@ export default class BoardPresenter {
   #handleLoadMoreButtonClick = () => {
     this.#renderTasks(
       this.#renderedTaskCount,
-      this.#renderedTaskCount + TASK_COUNT_PER_STEP
+      this.#renderedTaskCount + TASK_COUNT_PER_STEP,
     );
     this.#renderedTaskCount += TASK_COUNT_PER_STEP;
     if (this.#renderedTaskCount >= this.#boardTasks.length) {
@@ -101,7 +101,7 @@ export default class BoardPresenter {
     render(
       this.#sortComponent,
       this.#boardComponent.element,
-      RenderPosition.AFTERBEGIN
+      RenderPosition.AFTERBEGIN,
     );
   }
 
@@ -123,7 +123,7 @@ export default class BoardPresenter {
     render(
       this.#noTaskComponent,
       this.#boardComponent.element,
-      RenderPosition.AFTERBEGIN
+      RenderPosition.AFTERBEGIN,
     );
   }
 
@@ -146,7 +146,7 @@ export default class BoardPresenter {
     render(this.#taskListComponent, this.#boardComponent.element);
     this.#renderTasks(
       0,
-      Math.min(this.#boardTasks.length, TASK_COUNT_PER_STEP)
+      Math.min(this.#boardTasks.length, TASK_COUNT_PER_STEP),
     );
 
     if (this.#boardTasks.length > TASK_COUNT_PER_STEP) {
