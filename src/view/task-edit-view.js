@@ -175,7 +175,17 @@ export default class TaskEditView extends AbstractStatefulView {
     this.element
       .querySelector('.card__repeat-toggle')
       .addEventListener('click', this.#repeatingToggleHandler);
+    this.element
+      .querySelector('.card__text')
+      .addEventListener('input', this.#descriptionInputHandler);
   }
+
+  #descriptionInputHandler = (evt) => {
+    evt.preventDefault();
+    this._setState({
+      description: evt.target.value,
+    });
+  };
 
   #formSubmitHandler = (evt) => {
     evt.preventDefault();
