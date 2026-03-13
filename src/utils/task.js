@@ -48,6 +48,10 @@ function sortTaskDown(taskA, taskB) {
   return weight ?? dayjs(taskB.dueDate).diff(dayjs(taskA.dueDate));
 }
 
+function isDatesEqual(dateA, dateB) {
+  return (dateA === null && dateB === null) || dayjs(dateA).isSame(dateB, 'D');
+}
+
 export {
   humanizeTaskDueDate,
   isTaskExpired,
@@ -55,4 +59,5 @@ export {
   isTaskExpiringToday,
   sortTaskUp,
   sortTaskDown,
+  isDatesEqual,
 };
