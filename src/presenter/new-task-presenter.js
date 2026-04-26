@@ -54,6 +54,18 @@ export default class NewTaskPresenter {
     });
   }
 
+  setAborting() {
+    const resetFormState = () => {
+      this.#taskEditComponent.updateElement({
+        isDisabled: false,
+        isSaving: false,
+        isDeleting: false,
+      });
+    };
+
+    this.#taskEditComponent.shake(resetFormState);
+  }
+
   #handleFormSubmit = (task) => {
     this.#handleDataChange(UserAction.ADD_TASK, UpdateType.MINOR, task);
   };
