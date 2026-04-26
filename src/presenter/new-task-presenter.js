@@ -1,6 +1,5 @@
 import { remove, render, RenderPosition } from '../framework/render.js';
 import TaskEditView from '../view/task-edit-view.js';
-import { nanoid } from 'nanoid';
 import { UserAction, UpdateType } from '../const.js';
 
 export default class NewTaskPresenter {
@@ -49,13 +48,7 @@ export default class NewTaskPresenter {
   }
 
   #handleFormSubmit = (task) => {
-    this.#handleDataChange(
-      UserAction.ADD_TASK,
-      UpdateType.MINOR,
-      // Пока у нас нет сервера, который бы после сохранения
-      // выдывал честный id задачи, нам нужно позаботиться об этом самим
-      { id: nanoid(), ...task },
-    );
+    this.#handleDataChange(UserAction.ADD_TASK, UpdateType.MINOR, task);
     this.destroy();
   };
 
